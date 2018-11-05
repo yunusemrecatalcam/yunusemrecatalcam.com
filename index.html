@@ -1,131 +1,130 @@
 <!doctype html>
 <html>
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67954605-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-67954605-2');
+</script>
   <meta charset="UTF-8">
   <meta name="description" content="Personal website of Yunus Emre Çatalçam">
   <meta name="keywords" content="Software, Deep Learning, Embedded, yunusemrecatalcam">
   <meta name="author" content="Yunus Emre Çatalçam">
+  <link rel="shortcut icon" href="yech2.ico" />
   <title>Me</title>
 
   <script type="text/javascript" src="./vis.js"></script>
   <link href="./netw_min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="./main.css" rel="stylesheet" type="text/css" />
 
-  <style type="text/css">
-  #lol{
-      font-size: 25px;
-      font-weight: bold;
-      color: white;
-      z-index: 1;
-  }
 
-  @media only screen and (orientation: landscape){
-      #mynetwork {
-        width: 50vw;600px;
-        height: 93vh;400px;
-        z-index: -1;
-        position: absolute;
-        border: 0px;
-        top: 0;
-        left:0;
-      }
-      #right{
-        position: absolute;
-        right: 2%;
-        font-size: 30px;
-        color: black;
-      }
-  }
-
-  @media only screen and (max-device-width: 1080px){
-      #mynetwork {
-        width: 100vw;
-        height: 70vh;
-        z-index: -1;
-        position: absolute;
-        left: 0px;
-        border: 0px;
-      }
-      #right{
-        position: absolute;
-        bottom: 1%;
-        font-size: 25px;
-        font-weight: bold;
-        color: black;
-      }
-  }
-
-  </style>
 </head>
 <body bgcolor="#2C3531">
 
-<p id="lol">
-  As you see, Its confused like my hair
-</p>
+  <div class="navbar">
+    <a id="yech">YECH</a>
+    <!--<a href="#news">News</a>
+    <div class="dropdown">
+      <button class="dropbtn">Dropdown
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#"></a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>-->
+  </div>
 
-<div id="mynetwork"></div>
-<p id=right> You'll see something nice here soon</p>
+  <p id="lol">
+    As you see, Its confused like my hair
+  </p>
 
-<script type="text/javascript">
+  <div id="mynetwork"></div>
+  <p id=right> You'll see something nice here soon</p>
 
-  var nodes = new vis.DataSet([
-    {id: 1, font:{size:30},label: 'Me',shape: 'circle',color: 'green'},
+  <script type="text/javascript">
 
-    {id: 2,shape: 'circle', label: 'Entrepreneur',color:'#E98074'},
-    {id: 20, label: 'RoboReferee',color:'#E98074'},
-    {id: 200, label: 'ITU Cekirdek',color:'#9fce42'},
-    {id: 21, label: 'CodeUpAcademy',color:'#E98074'},
+    var nodes = new vis.DataSet([
+      {id: 1, font:{size:30},label: 'Me',shape: 'circle',color: 'green'},
 
-    {id: 3, shape: 'circle',label: 'Student',color:'#8860D0'},
-    {id: 30, shape: 'box',label: 'ITU (Istanbul Technical University)',color:'#8860D0'},
-    {id: 300, shape: 'box',label: 'Control and Automation Engineering',color:'#8860D0'},
-    {id: 31, label: 'IAFL 17"',color:'#8860D0'},
+      {id: 2,shape: 'circle', label: 'Entrepreneur',color:'#E98074'},
+      {id: 20, label: 'RoboReferee',color:'#E98074'},
+      {id: 200, label: 'ITU Cekirdek',color:'#9fce42'},
+      {id: 21, label: 'CodeUpAcademy',color:'#E98074'},
 
-    {id: 4,shape: 'circle',color:'#5AB9EA' ,label: 'Software Developer'},
-    {id: 40,shape: 'box', label: 'Embedded',color:'#5AB9EA' },
-    {id: 41,shape: 'circle', label: 'XC8',color:'#5AB9EA' },
-    {id: 42,shape: 'circle', label: 'nrf52',color:'#6CCFF6' },
-    {id: 43,shape: 'box', label: 'Deep Learning',color:'#5AB9EA' },
-    {id: 44,shape: 'box', label: 'tensorflow',color:'#FB8C00' },
+      {id: 3, shape: 'circle',label: 'Student',color:'#8860D0'},
+      {id: 30, shape: 'box',label: 'ITU (Istanbul Technical University)',color:'#8860D0'},
+      {id: 300, shape: 'box',label: 'Control and Automation Engineering',color:'#8860D0'},
+      {id: 31, label: 'IAFL 17"',color:'#8860D0'},
 
-    {id: 5,shape: 'circle', label: 'Racing Enthusiast',color:'#F8E9A1'},
-    {id: 50,shape: 'box', label: 'IAFL electric vehicle team',color:'#F8E9A1'},
-    {id: 51,shape: 'box', label: 'ITU facilis vehicle team',color:'#F8E9A1'}
-  ]);
+      {id: 4,shape: 'circle',color:'#5AB9EA' ,label: 'Software Developer'},
+      {id: 40,shape: 'box', label: 'Embedded',color:'#5AB9EA' },
+      {id: 41,shape: 'circle', label: 'XC8',color:'#5AB9EA' },
+      {id: 42,shape: 'circle', label: 'nrf52',color:'#6CCFF6' },
+      {id: 43,shape: 'box', label: 'Deep Learning',color:'#5AB9EA' },
+      {id: 44,shape: 'box', label: 'tensorflow',color:'#FB8C00' },
 
-  // create an array with edges
-  var edges = new vis.DataSet([
-    {from: 1, to: 3},
-    {from: 1, to: 2},
-    {from: 1, to: 4},
-    {from: 1, to: 5},
+      {id: 5,shape: 'circle', label: 'Racing Enthusiast',color:'#F8E9A1'},
+      {id: 50,shape: 'box', label: 'IAFL electric vehicle team',color:'#F8E9A1'},
+      {id: 51,shape: 'box', label: 'ITU facilis vehicle team',color:'#F8E9A1'}
+    ]);
 
-    {from: 2, to: 20},
-    {from: 2, to: 21},
-    {from: 20, to: 200},
+    // create an array with edges
+    var edges = new vis.DataSet([
+      {from: 1, to: 3},
+      {from: 1, to: 2},
+      {from: 1, to: 4},
+      {from: 1, to: 5},
 
-    {from: 3, to: 30},
-    {from: 3, to: 31},
-    {from: 30, to: 300},
+      {from: 2, to: 20},
+      {from: 2, to: 21},
+      {from: 20, to: 200},
 
-    {from: 4, to: 40},
-    {from: 40, to: 41},
-    {from: 40, to: 42},
-    {from: 4, to: 43},
-    {from: 43, to: 44},
-    {from: 5, to: 50},
-    {from: 5, to: 51},
-  ]);
+      {from: 3, to: 30},
+      {from: 3, to: 31},
+      {from: 30, to: 300},
 
-  // create a network
-  var container = document.getElementById('mynetwork');
-  var data = {
-    nodes: nodes,
-    edges: edges
-  };
-  var options = {};
-  var network = new vis.Network(container, data, options);
-</script>
+      {from: 4, to: 40},
+      {from: 40, to: 41},
+      {from: 40, to: 42},
+      {from: 4, to: 43},
+      {from: 43, to: 44},
+      {from: 5, to: 50},
+      {from: 5, to: 51},
+    ]);
 
+    // create a network
+    var container = document.getElementById('mynetwork');
+    var data = {
+      nodes: nodes,
+      edges: edges
+    };
+    var options = {};
+    var network = new vis.Network(container, data, options);
+
+    network.once("beforeDrawing", function() {
+      network.focus(1, {
+        scale: 5
+      });
+    });
+
+    network.once("afterDrawing", function() {
+      network.fit({
+        animation: {
+          duration: 400,
+          easingFunction: "easeOutQuart"
+        }
+      });
+    });
+
+
+  </script>
 
 </body>
 </html>
