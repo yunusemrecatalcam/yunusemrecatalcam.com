@@ -1,4 +1,10 @@
 <style type="text/css">
+
+@font-face {
+    font-family: 'Nexa_Bold'; /*a name to be used later*/
+    src: url('https:garga.ist/nexa/nexa_light-webfont.ttf'); /*URL to font*/
+}
+
 #lol{
     font-size: 25px;
     font-weight: bold;
@@ -12,7 +18,7 @@
       height: 93vh;400px;
       z-index: -1;
       position: absolute;
-      border-color :#ff3333;
+      /*border: 2px solid black;*/
       top: 0;
       left:0;
     }
@@ -24,14 +30,14 @@
     }
 }
 
-@media only screen and (max-device-width: 1080px){
+@media only screen and (orientation: portrait){
     #mynetwork {
-      width: 100vw;
-      height: 70vh;
+      width: 99vw;
+      height: 65vh;
       z-index: -1;
       position: absolute;
-      left: 0px;
-      border: 10px;
+      /*border: 2px solid black;*/
+      left:0;
     }
     #right{
       position: absolute;
@@ -45,8 +51,13 @@
 .navbar {
     overflow: hidden;
     background-color: #ff3333;
-    font-family: Arial, Helvetica, sans-serif;
-    z-index : 2;
+    position : fixed;
+    top: 0;
+    left: 0;
+    width : 100vw;
+    max-height: 10vh;
+    z-index: 2;
+    display: inline-block;
 }
 
 .navbar a {
@@ -56,6 +67,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    vertical-align: middle;
 }
 
 .dropdown {
@@ -74,39 +86,40 @@
     margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 #yech{
   font-style : bold;
-  font-family: "Times New Roman", Times, serif;
-  font-size:20px;
+  font-family: Nexa_Bold;
+  font-size: 4vh;
+  color: white;
+  margin-right: auto;
+}
+.flexy{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 9vh;
+}
+.github{
+  background-image: url(github.svg);
+  background-size:contain;
+  background-repeat: no-repeat;
+  order: 3;
+  margin-right: 10px;
+  min-width: 2vh;
+  min-height: 2vh;
+}
+.linkedin{
+  background-image: url(linkedin.svg);
+  background-size:contain;
+  background-repeat: no-repeat;
+  order: 2;
+  margin-right: 10px;
+  min-width: 2vh;
+  min-height: 2vh;
+}
+.flex_body{
+  display: flex;
+  align-content: stretch;
+  flex-direction: column;
 }
 </style>
