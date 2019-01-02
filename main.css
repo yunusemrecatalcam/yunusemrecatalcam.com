@@ -19,7 +19,7 @@
       z-index: -1;
       position: absolute;
       /*border: 2px solid black;*/
-      top: 0;
+      top: 9vh;
       left:0;
     }
     #right{
@@ -50,7 +50,7 @@
 
 .navbar {
     overflow: hidden;
-    background-color: #ff3333;
+    background-color: #7E0E13;#ff3333;
     position : fixed;
     top: 0;
     left: 0;
