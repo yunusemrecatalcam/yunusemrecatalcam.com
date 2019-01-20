@@ -49,13 +49,12 @@
 }
 
 .navbar {
-    overflow: hidden;
     background-color: #7E0E13;#ff3333;
     position : fixed;
     top: 0;
     left: 0;
     width : 100vw;
-    max-height: 10vh;
+    height: 8vh;
     z-index: 2;
     display: inline-block;
 }
@@ -87,6 +86,10 @@
 }
 
 #yech{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8vh;
   font-style : bold;
   font-family: Nexa_Bold;
   font-size: 4vh;
@@ -105,8 +108,8 @@
   background-repeat: no-repeat;
   order: 3;
   margin-right: 10px;
-  min-width: 2vh;
-  min-height: 2vh;
+  width: 1vh;
+  height: 1vh;
 }
 .linkedin{
   background-image: url(linkedin.svg);
@@ -114,12 +117,53 @@
   background-repeat: no-repeat;
   order: 2;
   margin-right: 10px;
-  min-width: 2vh;
-  min-height: 2vh;
+  width: 1vh;
+  height: 1vh;
+}
+a.linkedin{
+  text-align: right;
 }
 .flex_body{
   display: flex;
   align-content: stretch;
   flex-direction: column;
 }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 3;
+  width: 15vw;
+  right: 10vw;
+  top: 8vh;
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: right;
+  border: 0px solid black;
+  z-index: 3;
+  margin: 3px;
+}
+.show {
+  display: block;
+}
+.menu_icon{
+  background-image: url(menu.svg);
+  background-size:contain;
+  background-repeat: no-repeat;
+  margin-right: 2vw;;
+  float: left;
+  color: #f2f2f2;
+  text-decoration: none;
+  font-family: Nexa_Bold;
+  color: black;
+  cursor: pointer;
+}
+
 </style>

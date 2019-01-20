@@ -29,8 +29,17 @@
   <div class="navbar">
     <div class="flexy">
       <a id="yech">YECH</a>
-      <a href="https://github.com/yunusemrecatalcam" class="github"></a>
-      <a href="https://www.linkedin.com/in/yunus-emre-%C3%A7atal%C3%A7am-a68239128" class="linkedin"></a>
+
+      <div class="dropdown">
+         <a class="menu_icon" onclick="midmenu('menu_content')" ></a>
+         <div class="dropdown-content" id="menu_content">
+           <a href="https://github.com/yunusemrecatalcam" class="github">Github</a>
+           <a href="https://www.linkedin.com/in/yunus-emre-%C3%A7atal%C3%A7am-a68239128" class="linkedin">LinkedIn</a>
+           <a href="#">Kılavuz</a>
+           <a href="#">İletişim</a>
+         </div>
+     </div>
+
     </div>
   </div>
 
@@ -118,7 +127,18 @@
       });
     });
 
+    function midmenu(content_id) {
+    document.getElementById(content_id).classList.toggle("show");
+    }
 
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.menu_icon')) {
+        if (menu_content.classList.contains('show')) {
+          menu_content.classList.remove('show');
+        }
+      }
+    }
   </script>
 
 </body>
