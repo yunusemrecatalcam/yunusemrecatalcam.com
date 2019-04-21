@@ -25,9 +25,10 @@ body {
 .topnav .header {
   color: #D8F0EB;
   font-weight: 600;
-  font-size: 1.35rem;
+  font-size: 1.6rem;
   font-family: Georgia,Times,Times New Roman,serif;
   font-weight: 600;
+  margin-left: 1.0rem;
 }
 .dropdown .dropbtn {
   cursor: pointer;
@@ -82,6 +83,7 @@ p,h3{
   text-align: center;
   align-self: left;
   border: 1px solid black;
+  font-family: inherit;
 }
 
 .show {

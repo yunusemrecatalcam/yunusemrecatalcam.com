@@ -15,8 +15,10 @@ function calc_pos(){
     console.log(element.style.width);
   });
 
-  document.getElementById("myDropdown").style.left = (($("#dropbtn").position().left)+($("#dropbtn").innerWidth()-$("#myDropdown").innerWidth())/2) + "px";//horizontal align
+  document.getElementById("myDropdown").style.right = "0px";//($("#myDropdown").outerWidth()+ "px");
+  //(($("#dropbtn").position().left)+($("#dropbtn").innerWidth()-$("#myDropdown").innerWidth())/2) + "px";//horizontal align
   console.log("im calcing");
+  console.log(($("#dropdown_cont").innerWidth()+ "px"));
   //window.alert((($("#svg1").offset().left)/2));
 }
 
