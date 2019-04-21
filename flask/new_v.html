@@ -29,7 +29,7 @@
 
     <div class="topnav" id="topnav">
         <div class="flex_box">
-          <a class="header">YECH</a>
+          <a class="header">Yech</a>
           <div class="dropdown" id="dropdown_cont">
              <button class="dropbtn" id="dropbtn" onclick="midmenu('myDropdown')">ls -l
                <i class="fa fa-caret-down"></i>
@@ -52,26 +52,31 @@
       var nodes = new vis.DataSet([
         {id: 1, font:{size:30},label: 'Me',shape: 'circle',color: 'green'},
 
-        {id: 2,shape: 'circle', label: 'Entrepreneur',color:'#E98074'},
-        {id: 20, label: 'RoboReferee',color:'#E98074'},
-        {id: 200, label: 'ITU Cekirdek',color:'#9fce42'},
-        {id: 21, label: 'CodeUpAcademy',color:'#E98074'},
+        {id: 2,shape: 'circle',label: 'Entrepreneur',color:'#ef5350'},
+        {id: 20,shape: 'box',label: 'RoboReferee',color:'#E98074'},
+        {id: 200, shape: 'circle',label: 'ITU Cekirdek',color:'#c0ca33'},
+        {id: 21, shape: 'box',label: 'CodeUpAcademy',color:'#E98074'},
 
         {id: 3, shape: 'circle',label: 'Student',color:'#8860D0'},
-        {id: 30, shape: 'box',label: 'ITU (Istanbul Technical University)',color:'#8860D0'},
-        {id: 300, shape: 'box',label: 'Control and Automation Engineering',color:'#8860D0'},
-        {id: 31, label: 'IAFL 17"',color:'#8860D0'},
+        {id: 30, shape: 'box',label: 'ITU (Istanbul Technical University)',color:'#bb8eff'},
+        {id: 300, shape: 'box',label: 'Control and Automation Engineering',color:'#bb8eff'},
+        {id: 31,shape: 'circle', label: 'IAFL 17"',color:'#bb8eff'},
 
         {id: 4,shape: 'circle',color:'#5AB9EA' ,label: 'Software Developer'},
         {id: 40,shape: 'box', label: 'Embedded',color:'#5AB9EA' },
         {id: 41,shape: 'circle', label: 'XC8',color:'#5AB9EA' },
-        {id: 42,shape: 'circle', label: 'nrf52',color:'#6CCFF6' },
+        {id: 42,shape: 'circle', label: 'nrf52',color:'#5AB9EA' },
         {id: 43,shape: 'box', label: 'Deep Learning',color:'#5AB9EA' },
-        {id: 44,shape: 'box', label: 'tensorflow',color:'#FB8C00' },
+        {id: 44,shape: 'circle', label: 'tensorflow',color:'#FB8C00' },
 
-        {id: 5,shape: 'circle', label: 'Racing Enthusiast',color:'#F8E9A1'},
-        {id: 50,shape: 'box', label: 'IAFL electric vehicle team',color:'#F8E9A1'},
-        {id: 51,shape: 'box', label: 'ITU facilis vehicle team',color:'#F8E9A1'}
+        {id: 5,shape: 'circle', label: 'Racing Enthusiast',color:'#757575'},
+        {id: 50,shape: 'box', label: 'IAFL electric vehicle team',color:'#a4a4a4'},
+        {id: 51,shape: 'box', label: 'ITU facilis vehicle team',color:'#a4a4a4'},
+
+        {id: 6,shape: 'circle', label: 'Extrass',color:'#ffeb3b'},
+        {id: 60,shape: 'circle', label: 'Rollerblade',color:'#ffff72'},
+        {id: 61,shape: 'circle', label: 'Guitar',color:'#ffff72'},
+        {id: 62,shape: 'circle', label: 'Karaoke',color:'#ffff72'},
       ]);
 
       // create an array with edges
@@ -80,6 +85,7 @@
         {from: 1, to: 2},
         {from: 1, to: 4},
         {from: 1, to: 5},
+        {from: 1, to: 6},
 
         {from: 2, to: 20},
         {from: 2, to: 21},
@@ -96,6 +102,10 @@
         {from: 43, to: 44},
         {from: 5, to: 50},
         {from: 5, to: 51},
+
+        {from: 6, to: 60},
+        {from: 6, to: 61},
+        {from: 6, to: 62},
       ]);
 
       // create a network
@@ -114,10 +124,13 @@
             easingFunction: "easeOutQuart"
           }
         });
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+          network.focus(1, {
+            scale: 0.7
+          });
+            //window.alert("you lol");
+        }
 
-        network.focus(1, {
-          scale: 1.0
-        });
       });
     </script>
 </body>
