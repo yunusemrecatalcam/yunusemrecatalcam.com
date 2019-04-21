@@ -1,38 +1,44 @@
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color : #F8F9FB;#d7d8cd;
+  font-family: Georgia,Times,Times New Roman,serif;
+  background-color : #F8F9FB;
 }
 
 .topnav {
   overflow: visible;
-  background-color: #212529;#7E0E13;
+  background-color: #212529;
   font-family: Georgia,Times,Times New Roman,serif;
   position : fixed;
   top: 0;
   width : 100vw;
-  height: 3.5rem;
+  height: 3.3rem;
   z-index: 1;
 }
 .flex_box{
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   width : 100vw;
-  height: 6vh;
+  height: 3.3rem;
+  align-self: center;
 }
-#dropbtn{
-  align-self: flex-end;
-  color: rgba(255,255,255,.5);
-}
-.topnav h2 {
+.topnav .header {
   color: #D8F0EB;
   font-weight: 600;
   font-size: 1.35rem;
-  align-self: flex-start;
-  margin-left: 10px;
-  margin-top: auto;
-  margin-bottom: auto;
+  font-family: Georgia,Times,Times New Roman,serif;
+  font-weight: 600;
+}
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 1.0rem;
+  border: 1px solid #d7d8cd;
+  border-radius: 5px;
+  outline: 0px;
+  color: white;
+  padding: .5rem .5rem;
+  background-color: inherit;
+  font-weight: 600;
 }
 .text_view,.text_preview {
    background-color: transparent;#4CAF50;
@@ -40,7 +46,7 @@ body {
    border-color: #262624;
    border-style: dashed;
    margin: 0 auto;
-   width : 95%;90vw;
+   width : 95%;
    text-align : left;
    position: relative;
    word-wrap: break-word;
@@ -49,37 +55,16 @@ body {
 }
 .text_view {font-size: 20px;}
 
-@media (max-width: 1580px) { .text_view {font-size: 18px;
-  }
-}
-@media (max-width: 980px) { .text_view {font-size: 16px;
-  }
-}
+@media (max-width: 1580px) { .text_view {font-size: 18px;}}
+@media (max-width: 980px) { .text_view {font-size: 16px;}}
 p,h3{
   margin-left: 10px;
   margin-right: 10px;
 }
-
 .dropdown {
   float: left;
   overflow: hidden;
   order: 2;
-  border: 1px solid #d7d8cd;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  margin-right: 20px;
-}
-
-.dropdown .dropbtn {
-  cursor: pointer;
-  font-size: 16px;
-  border: 0px;
-  outline: 0px;
-  color: white;
-  background-color: inherit;
-  font-family: inherit;
-  font-weight: bold;
-
 }
 .dropdown-content {
   display: none;
