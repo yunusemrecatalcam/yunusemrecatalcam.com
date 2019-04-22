@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Georgia,Times,Times New Roman,serif;
-  background-color : #F8F9FB;
+  background-color : #F8F9FB;#C0C1BA;
 }
 
 .topnav {
@@ -27,8 +27,23 @@ body {
   font-weight: 600;
   font-size: 1.6rem;
   font-family: Georgia,Times,Times New Roman,serif;
-  font-weight: 600;
   margin-left: 0.8rem;
+}
+.all_container{
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #F8F9FB;#C0C1BA;
+  position: absolute;
+  top: 3.3rem;
+  left:0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.all_container p{
+
 }
 .dropdown .dropbtn {
   cursor: pointer;
@@ -43,17 +58,12 @@ body {
   margin-right: 0.8rem;
 }
 .text_view,.text_preview {
-   background-color: transparent;#4CAF50;
-   border: 3px;
-   border-color: #262624;
-   border-style: dashed;
+   background-color: transparent;
    margin: 0 auto;
    width : 95%;
    text-align : left;
-   position: relative;
    word-wrap: break-word;
    max-width: 1000px;
-   white-space: pre-wrap;
 }
 .text_view {font-size: 20px;}
 
@@ -91,15 +101,19 @@ p,h3{
   display: block;
 }
 
+#mynetwork {
+  max-width: 1000px;
+  max-height: 800px;
+}
+a{
+  color: #D82825;
+}
 @media only screen and (orientation: landscape){
     #mynetwork {
       width: 50vw;
       height: 90vh;400px;
       z-index: -1;
-      position: absolute;
-      border: 2px dashed rgba(0,0,0,.5);
-      top: 9vh;
-      left:0;
+      /*border: 2px dashed rgba(0,0,0,.5);*/
     }
 }
 
@@ -108,8 +122,6 @@ p,h3{
       width: 99vw;
       height: 65vh;
       z-index: -1;
-      position: absolute;
-      border: 2px dashed rgba(0,0,0,.5);
-      left:0;
+      /*border: 2px dashed rgba(0,0,0,.5);*/
     }
 }
