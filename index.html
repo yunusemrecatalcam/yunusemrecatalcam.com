@@ -16,9 +16,8 @@
     <meta name="description" content="I am Yunus Emre Çatalçam, a Machine Learning Developer, Embedded Software Developer.">
     <link rel="stylesheet" href='master.css') }}>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
 
-    <script type="text/javascript" src="./vis.js"></script>
     <link href="./netw_min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
@@ -80,9 +79,14 @@
     </div>
     </div>
     <script src='main.js' type="text/javascript"></script>
-
-    <script type="text/javascript">
-
+    <script type="text/javascript" src="./vis.js"></script>
+    <script type="text/javascript" defer>
+    function loadDaFun() {
+     var script = document.createElement('script');
+     script.src = './vis.js';
+     var head = document.getElementsByTagName("head")[0];
+     head.appendChild(script);
+    }
       var nodes = new vis.DataSet([
         {id: 1, font:{size:30},label: 'Me',shape: 'circle',color: 'green'},
 
