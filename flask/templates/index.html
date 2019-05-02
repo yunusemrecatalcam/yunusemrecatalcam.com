@@ -13,16 +13,15 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <link rel="stylesheet" href='master.css') }}>
+    <meta name="description" content="I am Yunus Emre Çatalçam, a Machine Learning Developer, Embedded Software Developer.">
+    <link rel="stylesheet" href={{ url_for('static', filename='master.css') }}>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script type="text/javascript" src="./vis.js"></script>
-    <link href="./netw_min.css" rel="stylesheet" type="text/css" />
+    <link href={{ url_for('static',filename='netw_min.css')}} rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="./main.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-
+    <title>Yech | Yunus Emre Çatalçam | Software Developer </title>
 </head>
 
 <body>
@@ -35,20 +34,59 @@
                <i class="fa fa-caret-down"></i>
              </button>
              <div class="dropdown-content" id="myDropdown">
-               <a href="/kimiz">WhoAmI?</a>
-               <a href="/kilavuz">Bloggation</a>
-               <a href="#">Contact</a>
+               <a href="https://github.com/yunusemrecatalcam">Github</a>
+               <a href="https://www.linkedin.com/in/yunus-emre-çatalçam-a68239128">LinkedIn</a>
              </div>
          </div>
 
         </div>
     </div>
+    <div class="all_container">
+      <div id="mynetwork"></div>
+      <div class="text_view">
 
-    <div id="mynetwork"></div>
-    <script src='main.js' type="text/javascript"></script>
+      <p>I am the one who interested in/passed through various things in the graph.</p>
+      <p>More historically, I lived in Istanbul Ataturk High School
+        of Science for 4 years. I started to find robotics interesting
+        in the first year of high school. I met with programming,
+        built some robots, met with PID
+        as a result of a need. On third and fourth grade, we've worked on
+        our race car as <a href="https://www.instagram.com/iaflelektrikliaraba/">
+        a team born from the ground up.</a> I was started
+        to thinking like <i>"Wow, it's so nice to having a racing team,
+        so nice to crafting a car that we've designed on SolidWorks,
+        so nice to having a garage that I can hug my car inside of it lol"</i></p>
+      <p>After graduation, I started Control and Automation Engineering at Istanbul Technical
+        University. As a race lover, continued to the story with ITU Facilis Racing Team.
+        Also started to working as an Embedded Software Developer at embdlab,
+        date was Jan 2018. I have started to learning about learning
+        (I mean Deep Learning) as a hobby these days.</p>
 
-    <script type="text/javascript">
+      <p>Another asynctask of me was developing a startup of us these days, RoboReferee.
+         We got an acception to working at ITU Çekirdek (Incubator) with
+         presentation we made to them. We worked for a while on both business
+         and the product sides as much as we can. Finally we saw that this was the
+         wrong sector since football industry is too regulated for inserting a new product.
+         As a person saw probability of failing at first-trials much more than
+         the following attempts, it wasn't so surprising to me. The important part
+         was that learning something from failure. <br>--classicalll</p>
 
+       <p>I am currently working at <a href="http://vircongroup.com/">Vircon Group</a>
+          as a Machine Learning Developer and at <a href="http://embdlab.com">Embdlab</a> as an Embedded Software Developer.</p>
+
+       <p>As a personal project I am developing a website for the magazine we were
+         publishing at High-School, <a href="https://garga.ist">GARGA</a> </p>
+    </div>
+    </div>
+    <script src={{url_for('static', filename='main.js')}} type="text/javascript"></script>
+    <script type="text/javascript" src={{url_for('static', filename='vis.js')}}></script>
+    <script type="text/javascript" defer>
+    function loadDaFun() {
+     var script = document.createElement('script');
+     script.src = './vis.js';
+     var head = document.getElementsByTagName("head")[0];
+     head.appendChild(script);
+    }
       var nodes = new vis.DataSet([
         {id: 1, font:{size:30},label: 'Me',shape: 'circle',color: 'green'},
 
@@ -114,7 +152,13 @@
         nodes: nodes,
         edges: edges
       };
-      var options = {};
+      var options = {
+        //width: ($("#mynetwork").outerWidth(true)+"px"),
+        //height: ($("#mynetwork").outerHeight(true)+"px")
+
+        width: (window.innerWidth - 250) + "px",
+        height: (window.innerHeight - 150) + "px"
+      };
       var network = new vis.Network(container, data, options);
 
       network.once("afterDrawing", function() {
