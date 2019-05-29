@@ -8,3 +8,7 @@ app = Flask(__name__, template_folder=template_path)
 @app.route("/")
 def index():
     return render_template("index.html")
+
+@app.route("/db")
+def db():
+    return render_template("index.html")

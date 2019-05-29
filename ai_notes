@@ -1,0 +1,67 @@
+-- in batch training, gradients for each example calculated seperately and every weight will be updated by its average gradient. 
+
+for example
+
+If your model has 5 weights and you have a mini-batch size of 2 then you might get this:
+
+Example 1. Loss=2, gradients=(1.5,−2.0,1.1,0.4,−0.9)
+Example 2. Loss=3, gradients=(1.2,2.3,−1.1,−0.8,−0.7)
+
+The average of the gradients in this mini-batch are calculated, they are (1.35,0.15,0,−0.2,−0.8)  
+
+tfidf
+continuos bag of words
+skip-gram / cbow
+taxogen
+lexical chaining  // word score
+
+
+12 Mar 
+
+find the most probable disambugation for the current context
+--predict likes
+
+
+19 Mar
+autoencoder
+
+beamsearch decoding
+
+
+name analyzer notes
+
+-- look for turkish char versions
+
+watergarden --> er
+isbankasidestek --> kaside
+
+
+taxogen
+liwc
+coreference -- onun
+pred logic -- ekler  kefir
+
+yann lecun relu
+
+train 
+
+batch 
+--preproccess
+
+generator yield instead return
+word
+
+
+
+DB_TWT_USERP_COLLECTION_ID
+DB_NAME
+
+encoder words+stop+pads
+decoder start+words+stop+pads
+
+pip install --no-cache-dir https://github.com/evdcush/TensorFlow-wheels/releases/download/tf-1.8-cpu-westmere/tensorflow-1.8.0-cp36-cp36m-linux_x86_64.whl
+
+
+LOGGATION
+redirect stderr to stdout
+docker service logs thy_sc_treglsnr 2>&1 -t | grep e9fduacxo8pq
