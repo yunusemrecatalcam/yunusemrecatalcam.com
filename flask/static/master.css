@@ -119,6 +119,18 @@ p,h3{
         border-right: 2px solid #212529;
         border-left: 2px solid #212529;
     }
+    #dropdown_cont,#dropbtn{
+        display: none;
+    }
+    .desktop_menus a{
+        color: #A8A9AB;
+        font-size: 1.0rem;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: normal;
+        text-decoration: none;
+        text-align: center;
+        margin-right: 1.0rem;
+    }
 }
 
 @media only screen and (orientation: portrait){
