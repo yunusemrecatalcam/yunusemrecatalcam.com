@@ -28,6 +28,12 @@ body {
     font-size: 1.6rem;
     font-family: Georgia,Times,Times New Roman,serif;
     margin-left: 0.8rem;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    -o-user-select:none;
+    user-select:none;
 }
 .all_container{
     align-items: center;
@@ -105,9 +111,6 @@ p,h3{
     max-width: 1000px;
     max-height: 800px;
 }
-a{
-    color: #D82825;
-}
 @media only screen and (orientation: landscape){
     #mynetwork {
         width: 95%;
@@ -124,5 +127,8 @@ a{
         height: 65vh;
         z-index: -1;
         /*border: 2px dashed rgba(0,0,0,.5);*/
+    }
+    .desktop_menus{
+        display: none;
     }
 }
