@@ -49,7 +49,7 @@
         <div class="randomy" id="randomy">
             <a>Just a puppet on a lonely string,</a>
             <a>who would ever wanna be king!</a>
-            <pre>___+___ <br>:  :  :<br>:  o  :<br>:_/|\/<br>  /\  <br> / /</pre>
+            <pre>___+___ <br>:  :  :<br>:  o  :<br>:_/|\/<br>  / \  <br>  \ /</pre>
         </div>
         <div class="randomy" id="filler" style="word-wrap: break-word;white-space: pre-wrap;">
 
@@ -197,6 +197,10 @@
               if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
                   network.focus(1, {
                     scale: 0.7
+                  });
+              }else{
+                  network.focus(1, {
+                    scale: 1.0
                   });
               }
           });

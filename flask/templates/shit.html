@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67954605-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-67954605-2');
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="description" content="I am Yunus Emre Çatalçam, a Machine Learning Developer, Embedded Software Developer.">
+    <link rel="stylesheet" href={{ url_for('static', filename='master.css') }}>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link href={{ url_for('static',filename='netw_min.css')}} rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <title>Yech | Yunus Emre Çatalçam | Software Developer </title>
+</head>
+
+<body>
+
+    <div class="topnav" id="topnav">
+        <div class="flex_box">
+            <a class="header">Yech</a>
+            <div class="desktop_menus">
+                <a href="https://github.com/yunusemrecatalcam">Github</a>
+                <a href="https://www.linkedin.com/in/yunus-emre-çatalçam-a68239128">LinkedIn</a>
+            </div>
+            <div class="dropdown" id="dropdown_cont">
+                <a href="javascript:void(0);" onclick="openMenu()" id="menuButton" title="Open Menu" class="w3-dropdown-click w3-button w3-bar-item topnav-icons fa fa-menu" style="font-size:28px;margin-top:-2px"></a>
+                <button class="dropbtn" id="dropbtn" onclick="midmenu('myDropdown')">ls -l
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="https://github.com/yunusemrecatalcam">Github</a>
+                    <a href="https://www.linkedin.com/in/yunus-emre-çatalçam-a68239128">LinkedIn</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="all_container">
+      <div id="mynetwork"></div>
+
+        <div class="randomy" id="filler" style="word-wrap: break-word;white-space: pre-wrap;">
+
+        </div>
+
+    </div>
+    <script type="text/javascript" src={{url_for('static', filename='vis.js')}}></script>
+    <script type="text/javascript" defer>
+
+        function loadDaFun() {
+            var script = document.createElement('script');
+            script.src = './vis.js';
+            var head = document.getElementsByTagName("head")[0];
+            head.appendChild(script);
+        }
+        var nodes = new vis.DataSet([
+            {id: 1, font:{size:30},label: 'Büyük Veri',shape: 'circle',color: 'green'},
+
+            {id: 2,shape: 'circle',label: 'IOT',color:'#ef5350'},
+            {id: 20,shape: 'box',label: 'Gömülü Sistemler',color:'#E98074'},
+            //{id: 200, shape: 'circle',label: 'ITU Cekirdek',color:'#c0ca33'},
+            //{id: 21, shape: 'box',label: 'CodeUpAcademy',color:'#E98074'},
+
+            {id: 3, shape: 'circle',label: 'Yapay Zeka',color:'#8860D0'},
+            {id: 30, shape: 'box',label: 'İstatistik',color:'#bb8eff'},
+            {id: 300, shape: 'box',label: 'Komunite Algılama',color:'#bb8eff'},
+            {id: 31,shape: 'circle', label: 'Makine Öğrenmesi',color:'#bb8eff'},
+            {id: 32,shape: 'circle', label: 'Derin Öğrenme',color:'#bb8eff'},
+
+            {id: 4,shape: 'circle',color:'#5AB9EA' ,label: 'İşlem Gücü'},
+            {id: 40,shape: 'box', label: 'GPU',color:'#5AB9EA' },
+            {id: 41,shape: 'circle', label: 'Cloud',color:'#5AB9EA' },
+
+            {id: 5,shape: 'circle', label: 'Veri Aktrarımı',color:'#757575'},
+            {id: 50,shape: 'box', label: 'Haberleşme Teknolojileri',color:'#a4a4a4'},
+
+            {id: 6,shape: 'circle', label: 'Veritabanı',color:'#ffeb3b'},
+
+            {id: 6,shape: 'circle', label: 'Veritabanı',color:'#ffeb3b'},
+        ]);
+
+        // create an array with edges
+        var edges = new vis.DataSet([
+            {from: 1, to: 3},
+            {from: 1, to: 2},
+            {from: 1, to: 4},
+            {from: 1, to: 5},
+            {from: 1, to: 6},
+
+            {from: 2, to: 20},
+            {from: 2, to: 21},
+            {from: 20, to: 200},
+
+            {from: 3, to: 30},
+            {from: 3, to: 31},
+            {from: 3, to: 32},
+            {from: 30, to: 300},
+
+            {from: 4, to: 40},
+            {from: 40, to: 41},
+            {from: 40, to: 42},
+            {from: 4, to: 43},
+            {from: 43, to: 44},
+            {from: 5, to: 50},
+            {from: 5, to: 51},
+
+            {from: 6, to: 60},
+            {from: 6, to: 61},
+            {from: 6, to: 62},
+        ]);
+
+      // create a network for once, and on resize for responsiveness
+      window.onresize = create_net;
+      create_net();
+      window.onresize = calc_pos;
+      calc_pos();
+
+      function create_net() {
+
+          var container = document.getElementById('mynetwork');
+          var data = {
+            nodes: nodes,
+            edges: edges
+          };
+          var options = {
+            width: ($("#mynetwork").outerWidth(true)+"px"),
+            height: (window.innerHeight) + "px"
+          };
+          var network = new vis.Network(container, data, options);
+
+          network.once("afterDrawing", function() {
+              network.fit({
+                animation: {
+                  duration: 1000,
+                  easingFunction: "easeOutQuart"
+                }
+              });
+              if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                  network.focus(1, {
+                    scale: 0.7
+                  });
+              }else{
+                  network.focus(1, {
+                    scale: 1.0
+                  });
+              }
+          });
+      }
+
+      function midmenu(content_id) {
+          document.getElementById(content_id).classList.toggle("show");
+      }
+      window.onclick = function(e) {
+          if (!e.target.matches('.dropbtn')) {
+              if (myDropdown.classList.contains('show')) {
+                  myDropdown.classList.remove('show');
+              }
+          }
+      }
+      function calc_pos(){
+          var topnav = document.getElementById("topnav");
+          var dropdowns =document.getElementsByClassName("dropdown-content");
+          var len = (topnav.offsetHeight-1) + "px";
+          Array.from(dropdowns).forEach(function(element){
+              element.style.top = len;
+              console.log(element.style.width);
+          });
+          document.getElementById("myDropdown").style.right = "0px";//($("#myDropdown").outerWidth()+ "px");
+      }
+
+        window.onload = random_place('randomy');
+        window.onload = random_place('filler');
+        function random_place(id) {
+            var blueMassElement = document.getElementById(id);
+            var currentTop = 0;
+            var documentHeight = window.innerHeight//document.documentElement.clientHeight;
+            var documentWidth = document.documentElement.clientWidth / 2;
+            var deg = Math.random() * (60 - 10) + 10;
+            currentTop = Math.floor(Math.random() * documentHeight) + 1;
+            currentLeft = Math.floor(Math.random() * documentWidth) + 1;
+            //blueMassElement.style.top = currentTop + "px";
+            //blueMassElement.style.left = currentLeft + "px";
+            deg = 25.0
+            blueMassElement.style.webkitTransform = 'rotate('+deg+'deg)';
+            blueMassElement.style.mozTransform    = 'rotate('+deg+'deg)';
+            blueMassElement.style.msTransform     = 'rotate('+deg+'deg)';
+            blueMassElement.style.oTransform      = 'rotate('+deg+'deg)';
+            blueMassElement.style.transform       = 'rotate('+deg+'deg)';
+        };
+    </script>
+</body>
+</html>

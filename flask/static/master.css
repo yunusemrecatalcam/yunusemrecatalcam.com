@@ -119,6 +119,7 @@ p,h3{
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
     transform: rotate(20deg);
+    z-index: 3;
 }
 @media only screen and (orientation: landscape){
     #mynetwork {

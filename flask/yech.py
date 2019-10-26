@@ -12,3 +12,7 @@ def index():
 @app.route("/db")
 def db():
     return render_template("index.html")
+
+@app.route("/shitn")
+def sihtty():
+    return render_template("shit.html")
